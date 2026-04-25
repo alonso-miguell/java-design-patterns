@@ -10,6 +10,9 @@ tag:
   - Object composition
   - Presentation
 ---
+# J2EE/Jakarta EE presentation pattern
+
+>It's based on the GOF composite pattern, but this one is shown in the Core J2EE Patterns book. This one  applies the principle to the presentation layer, composing UI fragments into a full page.
 
 ## Intent of Composite View Design Pattern
 
@@ -31,7 +34,7 @@ Wikipedia says
 
 Flowchart
 
-![Composite View flowchart](./etc/composite-view-flowchart.png)
+![Composite View flowchart](etc/composite-view-flowchart.png)
 
 ## Programmatic Example of Composite View Pattern in Java
 

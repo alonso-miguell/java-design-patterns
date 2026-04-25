@@ -10,6 +10,9 @@ tag:
   - Object composition
   - Recursion
 ---
+# GOF Design pattern
+### TLDR;
+This is the already well-known use of creating interfaces/abstract classes to define the structure of child objects which must follow a given hierarchy.
 
 ## Also known as
 
@@ -36,7 +39,7 @@ Wikipedia says
 
 Flowchart
 
-![Composite flowchart](./etc/composite-flowchart.png)
+![Composite flowchart](etc/composite-flowchart.png)
 
 ## Programmatic Example of Composite Pattern in Java
 

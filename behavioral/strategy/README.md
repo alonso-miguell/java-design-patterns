@@ -11,6 +11,8 @@ tag:
   - Interface
   - Polymorphism
 ---
+### TLDR;
+Using interfaces to create different approaches (strategies) for solving the same problem. We can have a client, which will use a context (a middle man between the client and the strategy) which will select and call the strategy. Using a context isn't mandatory but it's recommended to avoid tight coupling between the client and the strategy.
 
 ## Also known as
 
@@ -36,7 +38,7 @@ Wikipedia says
 
 Flowchart
 
-![Strategy flowchart](./etc/strategy-flowchart.png)
+![Strategy flowchart](etc/strategy-flowchart.png)
 
 ## Programmatic Example of Strategy Pattern in Java
 

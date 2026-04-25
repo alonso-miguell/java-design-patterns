@@ -13,6 +13,9 @@ tag:
   - Persistence
   - Resource management
 ---
+# J2EE/Jakarta EE presentation pattern
+
+>It's based on the GOF composite pattern, but this one is shown in the Core J2EE Patterns book. This one applies the principle to the persistence layer, grouping related objects into a single persistable unit.
 
 ## Also known as
 
@@ -38,7 +41,7 @@ Wikipedia says
 
 Flowchart
 
-![Composite Entity flowchart](./etc/composite-entity-flowchart.png)
+![Composite Entity flowchart](etc/composite-entity-flowchart.png)
 
 ## Programmatic Example of Composite Entity in Java
 
