@@ -47,17 +47,17 @@ public class App {
   public static void main(String[] args) {
 
     // simple troll
-    LOGGER.info("A simple looking troll approaches.");
-    var troll = new SimpleTroll();
+    LOGGER.info("***** A simple looking troll approaches. ****");
+    Troll troll = new SimpleTroll();
     troll.attack();
     troll.fleeBattle();
     LOGGER.info("Simple troll power: {}.\n", troll.getAttackPower());
 
     // change the behavior of the simple troll by adding a decorator
-    LOGGER.info("A troll with huge club surprises you.");
-    var clubbedTroll = new ClubbedTroll(troll);
-    clubbedTroll.attack();
-    clubbedTroll.fleeBattle();
-    LOGGER.info("Clubbed troll power: {}.\n", clubbedTroll.getAttackPower());
+    LOGGER.info("*****A equipped troll with huge club and magic staff surprises you. ***");
+    ClubbedTroll equippedTroll = new ClubbedTroll(new MagicTroll(troll));
+    equippedTroll.attack();
+    equippedTroll.fleeBattle();
+    LOGGER.info("Equipped troll power: {}.\n", equippedTroll.getAttackPower());
   }
 }

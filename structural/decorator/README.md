@@ -11,6 +11,22 @@ tag:
   - Object composition 
   - Wrapping
 ---
+### TLDR;
+
+Decorator uses a wrapped object to add responsibilities without forcing the wrapped class to actually change the behavior. And  in this way we can combine multiple behaviors.
+![Decorator real life example](etc/img.png)
+Wearing clothes is an example of using decorators. When you’re cold, you wrap yourself in a sweater. If you’re still cold with a sweater, you can wear a jacket on top. If it’s raining, you can put on a raincoat. All of these garments “extend” your basic behavior but aren’t part of you, and you can easily take off any piece of clothing whenever you don’t need it.
+Be aware that:
+- Even though the pattern can be called wrapper, a wrapper does not necessarily mean that it follows the decorator pattern. 
+- "Wrapper" is just an informal mechanical description — it only means one object holds a reference to another and delegates calls to it.
+- There are other patterns using wrappers:
+- - Decorator's intent is adding responsibilities
+- - Proxy's intent is controlling access
+- - Adapter's intent is converting interfaces 
+
+> NOTE: I changed the coding example for adding the EquippedTroll abstract class, since it wasn't using one to create concrete decorators and was creating the decorator directly from Troll, also added MagicTroll to combine behaviors and show a better example. 
+
+> The GoF recommendation of using an abstract decorator is really just about avoiding boilerplate — the pattern works without it, but it gets harder to maintain as the number of decorators and interface methods grows.
 
 ## Also known as
 
@@ -37,7 +53,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Decorator sequence diagram](./etc/decorator-sequence-diagram.png)
+![Decorator sequence diagram](etc/decorator-sequence-diagram.png)
 
 ## Programmatic Example of Decorator Pattern in Java
 
