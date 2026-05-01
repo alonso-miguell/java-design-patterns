@@ -22,6 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package com.iluwatar.abstractfactory;
 
 import lombok.Getter;
@@ -57,19 +58,43 @@ public class App implements Runnable {
     app.run();
   }
 
+//  @Override
+//  public void run() {
+//    LOGGER.info("elf kingdom");
+//    createKingdom(Kingdom.FactoryMaker.KingdomType.ELF);
+//    LOGGER.info(kingdom.getArmy().getDescription());
+//    LOGGER.info(kingdom.getCastle().getDescription());
+//    LOGGER.info(kingdom.getKing().getDescription());
+//
+//    LOGGER.info("orc kingdom");
+//    createKingdom(Kingdom.FactoryMaker.KingdomType.ORC);
+//    LOGGER.info(kingdom.getArmy().getDescription());
+//    LOGGER.info(kingdom.getCastle().getDescription());
+//    LOGGER.info(kingdom.getKing().getDescription());
+//  }
+
+  /**
+   * Just editted this run method to show how client code works with a single type Kingdom
+   * and e only specify at creation time.
+   * Then the code is the same even thought we created different families of kingdoms (Elf/Orc)
+   */
   @Override
   public void run() {
     LOGGER.info("elf kingdom");
-    createKingdom(Kingdom.FactoryMaker.KingdomType.ELF);
-    LOGGER.info(kingdom.getArmy().getDescription());
-    LOGGER.info(kingdom.getCastle().getDescription());
-    LOGGER.info(kingdom.getKing().getDescription());
+    Kingdom elfKingdom =
+        createConcreteKingdom(Kingdom.FactoryMaker.KingdomType.ELF);
+
+    LOGGER.info(elfKingdom.getArmy().getDescription());
+    LOGGER.info(elfKingdom.getCastle().getDescription());
+    LOGGER.info(elfKingdom.getKing().getDescription());
 
     LOGGER.info("orc kingdom");
-    createKingdom(Kingdom.FactoryMaker.KingdomType.ORC);
-    LOGGER.info(kingdom.getArmy().getDescription());
-    LOGGER.info(kingdom.getCastle().getDescription());
-    LOGGER.info(kingdom.getKing().getDescription());
+    Kingdom orcKingdom =
+        createConcreteKingdom(Kingdom.FactoryMaker.KingdomType.ORC);
+
+    LOGGER.info(orcKingdom.getArmy().getDescription());
+    LOGGER.info(orcKingdom.getCastle().getDescription());
+    LOGGER.info(orcKingdom.getKing().getDescription());
   }
 
   /**
@@ -82,5 +107,16 @@ public class App implements Runnable {
     kingdom.setKing(kingdomFactory.createKing());
     kingdom.setCastle(kingdomFactory.createCastle());
     kingdom.setArmy(kingdomFactory.createArmy());
+  }
+
+  public Kingdom createConcreteKingdom(final Kingdom.FactoryMaker.KingdomType kingdomType) {
+    final KingdomFactory kingdomFactory = Kingdom.FactoryMaker.makeFactory(kingdomType);
+    Kingdom concreteKingdom = new Kingdom();
+
+    concreteKingdom.setKing(kingdomFactory.createKing());
+    concreteKingdom.setCastle(kingdomFactory.createCastle());
+    concreteKingdom.setArmy(kingdomFactory.createArmy());
+
+    return concreteKingdom;
   }
 }

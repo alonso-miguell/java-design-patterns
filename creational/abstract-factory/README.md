@@ -11,7 +11,13 @@ tag:
   - Instantiation
   - Polymorphism
 ---
-
+# GOF Design pattern
+### TLDR;
+Abstract factory is a pattern where we unify a set of related factories by creating an abstract factory. Let's say we have different GUIs for different OS, we could have MacButton,WindowsButton, MacCheckBox, WindowsCheckbox, every of these objects have their proper interface and factory, then we can group them into "families" for every OS. So then, these factories must return the families interfaces types instead a concrete type, so our application can work with the interface type without depending of a concrete type/family.
+>- We will only indicate which class of concrete family we need at initialization time by a user choice or environment setting/config.
+>- The app code will work with the interfaces types, not concrete types.
+>-  Use the Abstract Factory when your code needs to work with various families of related products, but you don’t want it to depend on the concrete classes of those products—they might be unknown beforehand or you simply want to allow for future extensibility.
+>-  Consider implementing the Abstract Factory when you have a class with a set of Factory Methods that blur its primary responsibility.
 ## Also known as
 
 * Kit
@@ -38,7 +44,7 @@ Wikipedia says
 
 Class diagram
 
-![Abstract Factory class diagram](./etc/abstract-factory.urm.png "Abstract Factory class diagram")
+![Abstract Factory class diagram](etc/abstract-factory.urm.png "Abstract Factory class diagram")
 
 ## Programmatic Example of Abstract Factory in Java
 

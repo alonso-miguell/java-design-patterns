@@ -11,6 +11,7 @@ tag:
   - Object composition 
   - Wrapping
 ---
+# GOF Design pattern
 ### TLDR;
 
 Decorator uses a wrapped object to add responsibilities without forcing the wrapped class to actually change the behavior. And  in this way we can combine multiple behaviors.
