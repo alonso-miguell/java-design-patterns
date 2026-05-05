@@ -11,6 +11,16 @@ tag:
   - Gang of Four
   - Object composition
 ---
+# GOF Design pattern
+### TLDR;
+Basically, we have two different hierarchies, each one with its properties, methods and interfaces/abstract classes so they can evolve and change independently. However one hieracgy is known as the ABSTRACTION which will hold a reference to the other hierarchy known as the IMPLEMENTATION (I know, souns like java keywords but these terms are used for describing the pattern)  this reference is known as the BRIDGE which is kind of similar to dependency injection since the ABSTRACTION will use/combine the methods (usually composed, high level methods/logic) in the IMPLEMENTATION (usually simpler logic/methods focused on primitives).
+> The reason the Abstraction side typically holds the reference (and not the other way around) is that the Abstraction is the client-facing side
+
+#### Differences with other patterns:
+- Decorator ADDS on top of existing behavior, bridge defines the behavior (implements it)
+- Strategy is useful when A SINGLE dimension varies (example: sort algorithm), bridge is useful when TWO dimensions vary (shape/renderer, remoteControl/device)
+
+![Bridge](etc/bridge.png)
 
 ## Also known as
 
@@ -38,7 +48,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Bridge sequence diagram](./etc/bridge-sequence-diagram.png)
+![Bridge sequence diagram](etc/bridge-sequence-diagram.png)
 
 ## Programmatic Example of Bridge Pattern in Java
 
