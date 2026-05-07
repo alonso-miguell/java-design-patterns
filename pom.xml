@@ -99,7 +99,6 @@
         <module>collecting-parameter</module>
         <module>collection-pipeline</module>
         <module>combinator</module>
-        <module>command</module>
         <module>command-query-responsibility-segregation</module>
         <module>commander</module>
         <module>component</module>

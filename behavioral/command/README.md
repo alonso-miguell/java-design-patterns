@@ -10,6 +10,15 @@ tag:
   - Gang of Four
   - Undo
 ---
+# GOF Design pattern
+### TLDR;
+Use Command when you need to record, undo, redo, queue, request — not just execute it. The request will be used as an object which can contain all the required info for executing the command. Apart from undo, redo or record we can also use it for Job queues / task scheduling,  Macro commands — multiple commands (actions), setting dynamic actions (Common in GUI frameworks and plugin systems). 
+In command we have 4 actors:
+- Command: the action (used as an object) to execute
+- Invoker: Can redo/undo, record and execute the action by using .execute()
+- Receiver: The object/class which will do the actual work after being called by the invoker, this can look like an isolated normal class
+- Client: Creates both invoker and receiver, then decides which commands to execute on the receiver (usually our app/main class)
+  ![Command diagram](etc/restaurant-command.png)
 
 ## Also known as
 
@@ -36,7 +45,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Command sequence diagram](./etc/command-sequence-diagram.png)
+![Command sequence diagram](etc/command-sequence-diagram.png)
 
 ## Programmatic Example of Command Pattern in Java
 
