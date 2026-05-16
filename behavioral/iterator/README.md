@@ -13,6 +13,19 @@ tag:
   - Polymorphism
 ---
 
+# GOF Design pattern
+### TLDR;
+Iterator is nothing more than an interface designed to hide complex details about
+the element of a collection but allowing access to such elements in a certain order.
+So we can define different ways of traversing a data structure or multiple
+data structures (such as collections).
+
+![Iterator sequence diagram](etc/iterator-comic-1-en-1.5x.png)
+Various ways to travel Rome
+
+![Iterator sequence diagram](etc/problem2-1.5x.png)
+Various ways to travel data structures
+
 ## Also known as
 
 * Cursor

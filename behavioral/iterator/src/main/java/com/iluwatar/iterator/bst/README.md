@@ -1,3 +1,8 @@
+### TLDR;
+A binary search tree is the one which follows a certain order. It ensures that its left node is less than 
+the parent and the right node is greater. When iterating over a BST e follo the order, root ,left, right
+to find the minimum number.
+
 # BSTIterator
 
 An implementation of the Iterator design pattern, for the Binary Search Tree data structure. A great 

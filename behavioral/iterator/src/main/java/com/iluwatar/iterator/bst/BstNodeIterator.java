@@ -29,20 +29,23 @@ import java.util.NoSuchElementException;
 import java.util.Stack;
 
 /**
+ *
+ * TLDR; This class is just an iterator for BSTNodes, we require the root of a BST as first node.
+ *
  * An in-order implementation of a BST Iterator. For example, given a BST with Integer values,
  * expect to retrieve TreeNodes according to the Integer's natural ordering (1, 2, 3...)
  *
  * @param <T> This Iterator has been implemented with generic typing to allow for TreeNodes of
  *     different value types
  */
-public class BstNodeIterator<T extends Comparable<T>> implements Iterator<BSTree<T>.Node<T>> {
+public class BstNodeIterator<T extends Comparable<T>> implements Iterator<BSTree.Node<T>> {
 
-  private final Stack<BSTree<T>.Node<T>> pathStack;
+  private final Stack<BSTree.Node<T>> pathStack;
 
   public BstNodeIterator(BSTree<T> tree) {
     pathStack = new Stack<>();
     pushPathToNextSmallest(tree.getRoot());
-    System.out.println("current stack at beginning: "+pathStack.toString());
+//    System.out.println("current stack at beginning: "+pathStack);
   }
 
   /**
@@ -52,13 +55,14 @@ public class BstNodeIterator<T extends Comparable<T>> implements Iterator<BSTree
    *
    * @param node TreeNode that acts as root of the subtree we're interested in.
    */
-  private void pushPathToNextSmallest(BSTree<T>.Node<T> node) {
+  private void pushPathToNextSmallest(BSTree.Node<T> node) {
     while (node != null) {
       pathStack.push(node);
       System.out.println("pushed: "+node);
       node = node.getLeft();
     }
-    System.out.println(pathStack + " stack after traversing");
+
+//    System.out.println(pathStack + " stack after traversing");
   }
 
   /**
@@ -78,16 +82,17 @@ public class BstNodeIterator<T extends Comparable<T>> implements Iterator<BSTree
    * @throws NoSuchElementException if this iterator does not have a next element
    */
   @Override
-  public BSTree<T>.Node<T> next() throws NoSuchElementException {
+  public BSTree.Node<T> next() throws NoSuchElementException {
     if (pathStack.isEmpty()) {
       throw new NoSuchElementException();
     }
     var next = pathStack.pop();
-    System.out.println("next min value:"+next);
+//    System.out.println("next min value:"+next);
 
-    if(next.getRight()!=null) {
-      System.out.println("iteratin in next" + next.getRight().toString());
-    }
+//    if(next.getRight()!=null) {
+//      System.out.println("iteratin in next" + next.getRight());
+//    }
+
     pushPathToNextSmallest(next.getRight());
 
     return next;

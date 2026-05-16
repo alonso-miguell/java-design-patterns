@@ -62,16 +62,16 @@ class BstNodeIteratorTest {
         "next() should throw an IllegalStateException if hasNext() is false.");
   }
 
-//  @Test
-//  void nextOverEntirePopulatedTree() {
-//    var iter = new BstIterator<>(nonEmptyRoot);
-//    assertEquals(Integer.valueOf(1), iter.next().getRoot(), "First Node is 1.");
-//    assertEquals(Integer.valueOf(3), iter.next().getRoot(), "Second Node is 3.");
-//    assertEquals(Integer.valueOf(4), iter.next().getRoot(), "Third Node is 4.");
-//    assertEquals(Integer.valueOf(5), iter.next().getRoot(), "Fourth Node is 5.");
-//    assertEquals(Integer.valueOf(6), iter.next().getRoot(), "Fifth Node is 6.");
-//    assertEquals(Integer.valueOf(7), iter.next().getRoot(), "Sixth Node is 7.");
-//  }
+  @Test
+  void nextOverEntirePopulatedTree() {
+    BstNodeIterator<Integer> bstNodeIterator = new BstNodeIterator<>(nonEmptyRoot);
+    assertEquals(Integer.valueOf(1), bstNodeIterator.next().getVal(), "First Node is 1.");
+    assertEquals(Integer.valueOf(3), bstNodeIterator.next().getVal(), "Second Node is 3.");
+    assertEquals(Integer.valueOf(4), bstNodeIterator.next().getVal(), "Third Node is 4.");
+    assertEquals(Integer.valueOf(5), bstNodeIterator.next().getVal(), "Fourth Node is 5.");
+    assertEquals(Integer.valueOf(6), bstNodeIterator.next().getVal(), "Fifth Node is 6.");
+    assertEquals(Integer.valueOf(7), bstNodeIterator.next().getVal(), "Sixth Node is 7.");
+  }
 
   @Test
   void hasNextForEmptyTree() {
@@ -85,21 +85,21 @@ class BstNodeIteratorTest {
     assertTrue(iter.hasNext(), "hasNext() should return true for populated tree.");
   }
 
-//  @Test
-//  void nextAndHasNextOverEntirePopulatedTree() {
-//    var iter = new BstIterator<>(nonEmptyRoot);
-//    assertTrue(iter.hasNext(), "Iterator hasNext() should be true.");
-//    assertEquals(Integer.valueOf(1), iter.next().getRoot(), "First Node is 1.");
-//    assertTrue(iter.hasNext(), "Iterator hasNext() should be true.");
-//    assertEquals(Integer.valueOf(3), iter.next().getRoot(), "Second Node is 3.");
-//    assertTrue(iter.hasNext(), "Iterator hasNext() should be true.");
-//    assertEquals(Integer.valueOf(4), iter.next().getRoot(), "Third Node is 4.");
-//    assertTrue(iter.hasNext(), "Iterator hasNext() should be true.");
-//    assertEquals(Integer.valueOf(5), iter.next().getRoot(), "Fourth Node is 5.");
-//    assertTrue(iter.hasNext(), "Iterator hasNext() should be true.");
-//    assertEquals(Integer.valueOf(6), iter.next().getRoot(), "Fifth Node is 6.");
-//    assertTrue(iter.hasNext(), "Iterator hasNext() should be true.");
-//    assertEquals(Integer.valueOf(7), iter.next().getRoot(), "Sixth Node is 7.");
-//    assertFalse(iter.hasNext(), "Iterator hasNext() should be false, end of tree.");
-//  }
+  @Test
+  void nextAndHasNextOverEntirePopulatedTree() {
+    BstNodeIterator<Integer> bstNodeIterator = new BstNodeIterator<>(nonEmptyRoot);
+    assertTrue(bstNodeIterator.hasNext(), "Iterator hasNext() should be true.");
+    assertEquals(Integer.valueOf(1), bstNodeIterator.next().getVal(), "First Node is 1.");
+    assertTrue(bstNodeIterator.hasNext(), "Iterator hasNext() should be true.");
+    assertEquals(Integer.valueOf(3), bstNodeIterator.next().getVal(), "Second Node is 3.");
+    assertTrue(bstNodeIterator.hasNext(), "Iterator hasNext() should be true.");
+    assertEquals(Integer.valueOf(4), bstNodeIterator.next().getVal(), "Third Node is 4.");
+    assertTrue(bstNodeIterator.hasNext(), "Iterator hasNext() should be true.");
+    assertEquals(Integer.valueOf(5), bstNodeIterator.next().getVal(), "Fourth Node is 5.");
+    assertTrue(bstNodeIterator.hasNext(), "Iterator hasNext() should be true.");
+    assertEquals(Integer.valueOf(6), bstNodeIterator.next().getVal(), "Fifth Node is 6.");
+    assertTrue(bstNodeIterator.hasNext(), "Iterator hasNext() should be true.");
+    assertEquals(Integer.valueOf(7), bstNodeIterator.next().getVal(), "Sixth Node is 7.");
+    assertFalse(bstNodeIterator.hasNext(), "Iterator hasNext() should be false, end of tree.");
+  }
 }

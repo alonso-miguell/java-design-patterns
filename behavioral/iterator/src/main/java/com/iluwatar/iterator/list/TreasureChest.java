@@ -49,9 +49,9 @@ public class TreasureChest {
             new Item(ItemType.WEAPON, "Dagger of poison"));
   }
 
-  public Iterator<Item> iterator(ItemType itemType) {
-    return new TreasureChestItemIterator(this, itemType);
-  }
+//  public Iterator<Item> iterator(ItemType itemType) {
+//    return new TreasureChestItemIterator(this, itemType);
+//  }
 
   /** Get all items. */
   public List<Item> getItems() {

@@ -28,6 +28,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * TLDR; This class only represents a BST, including a Node class and all methods required
+ * to ensure insertion order.
+ *
+ *
  * TreeNode Class, representing one node in a Binary Search Tree. Allows for a generically typed
  * value.
  *
@@ -35,11 +39,10 @@ import lombok.Setter;
  */
 public class BSTree<T extends Comparable<T>> {
 
-  public class Node<T>{
-    private final T val;
-
+  // Class to represent a BST Node
+  public static class Node<T>{
+    @Getter private final T val;
     @Getter @Setter private Node<T> left;
-
     @Getter @Setter private Node<T> right;
 
 
@@ -54,21 +57,14 @@ public class BSTree<T extends Comparable<T>> {
       return val.toString();
     }
   }
+
   private final Node<T> root;
-//
-//  @Getter @Setter private BSTreeNode<T> left;
-//
-//  @Getter @Setter private BSTreeNode<T> right;
 
   /**
-   * Creates a TreeNode with a given value, and null children.
-   *
-   * @param value The value of the given node
+   * Creates a BSTree with a root using the given value
    */
   public BSTree(T value) {
     this.root = new Node<>(value);
-//    this.left = null;
-//    this.right = null;
   }
 
   public Node<T> getRoot() {
@@ -81,7 +77,7 @@ public class BSTree<T extends Comparable<T>> {
    * @param valToInsert The value to insert as a new TreeNode
    */
   public void insert(T valToInsert) {
-    var parent = getParentNodeOfValueToBeInserted(valToInsert);
+    Node<T> parent = getParentNodeOfValueToBeInserted(valToInsert);
     insertNewChild(valToInsert, parent);
   }
 
@@ -108,6 +104,7 @@ public class BSTree<T extends Comparable<T>> {
    * integrity of the BST.
    *
    * @param value The value of the TreeNode that would be inserted beneath self
+   * @param node The currentNode in the hierarchy
    * @return The child TreeNode of self which represents the subtree where `value` would be inserted
    */
   private Node<T> traverseOneLevelDown(T value, Node<T> node) {
