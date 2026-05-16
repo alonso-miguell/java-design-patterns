@@ -34,7 +34,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Visitor sequence diagram](./etc/visitor-sequence-diagram.png)
+![Visitor sequence diagram](etc/visitor-sequence-diagram.png)
 
 ## Programmatic Example of Visitor Pattern in Java
 
