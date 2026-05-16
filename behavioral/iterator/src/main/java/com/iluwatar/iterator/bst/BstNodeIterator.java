@@ -25,8 +25,8 @@
 package com.iluwatar.iterator.bst;
 
 import com.iluwatar.iterator.Iterator;
-import java.util.ArrayDeque;
 import java.util.NoSuchElementException;
+import java.util.Stack;
 
 /**
  * An in-order implementation of a BST Iterator. For example, given a BST with Integer values,
@@ -35,13 +35,14 @@ import java.util.NoSuchElementException;
  * @param <T> This Iterator has been implemented with generic typing to allow for TreeNodes of
  *     different value types
  */
-public class BstIterator<T extends Comparable<T>> implements Iterator<TreeNode<T>> {
+public class BstNodeIterator<T extends Comparable<T>> implements Iterator<BSTree<T>.Node<T>> {
 
-  private final ArrayDeque<TreeNode<T>> pathStack;
+  private final Stack<BSTree<T>.Node<T>> pathStack;
 
-  public BstIterator(TreeNode<T> root) {
-    pathStack = new ArrayDeque<>();
-    pushPathToNextSmallest(root);
+  public BstNodeIterator(BSTree<T> tree) {
+    pathStack = new Stack<>();
+    pushPathToNextSmallest(tree.getRoot());
+    System.out.println("current stack at beginning: "+pathStack.toString());
   }
 
   /**
@@ -51,11 +52,13 @@ public class BstIterator<T extends Comparable<T>> implements Iterator<TreeNode<T
    *
    * @param node TreeNode that acts as root of the subtree we're interested in.
    */
-  private void pushPathToNextSmallest(TreeNode<T> node) {
+  private void pushPathToNextSmallest(BSTree<T>.Node<T> node) {
     while (node != null) {
       pathStack.push(node);
+      System.out.println("pushed: "+node);
       node = node.getLeft();
     }
+    System.out.println(pathStack + " stack after traversing");
   }
 
   /**
@@ -75,12 +78,18 @@ public class BstIterator<T extends Comparable<T>> implements Iterator<TreeNode<T
    * @throws NoSuchElementException if this iterator does not have a next element
    */
   @Override
-  public TreeNode<T> next() throws NoSuchElementException {
+  public BSTree<T>.Node<T> next() throws NoSuchElementException {
     if (pathStack.isEmpty()) {
       throw new NoSuchElementException();
     }
     var next = pathStack.pop();
+    System.out.println("next min value:"+next);
+
+    if(next.getRight()!=null) {
+      System.out.println("iteratin in next" + next.getRight().toString());
+    }
     pushPathToNextSmallest(next.getRight());
+
     return next;
   }
 }

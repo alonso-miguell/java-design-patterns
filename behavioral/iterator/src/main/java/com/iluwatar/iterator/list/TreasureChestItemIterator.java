@@ -54,6 +54,12 @@ public class TreasureChestItemIterator implements Iterator<Item> {
     return null;
   }
 
+  /**
+   * This iterator basically just iterates over the whole
+   * items list and returns only the ones of the enum type
+   * requested
+   *
+   */
   private int findNextIdx() {
     var items = chest.getItems();
     var tempIdx = idx;

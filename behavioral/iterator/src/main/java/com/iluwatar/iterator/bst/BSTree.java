@@ -33,27 +33,46 @@ import lombok.Setter;
  *
  * @param <T> generically typed to accept various data types for the val property
  */
-public class TreeNode<T extends Comparable<T>> {
+public class BSTree<T extends Comparable<T>> {
 
-  private final T val;
+  public class Node<T>{
+    private final T val;
 
-  @Getter @Setter private TreeNode<T> left;
+    @Getter @Setter private Node<T> left;
 
-  @Getter @Setter private TreeNode<T> right;
+    @Getter @Setter private Node<T> right;
+
+
+    public Node(T val) {
+      this.val = val;
+      this.left = null;
+      this.right = null;
+    }
+
+    @Override
+    public String toString() {
+      return val.toString();
+    }
+  }
+  private final Node<T> root;
+//
+//  @Getter @Setter private BSTreeNode<T> left;
+//
+//  @Getter @Setter private BSTreeNode<T> right;
 
   /**
    * Creates a TreeNode with a given value, and null children.
    *
-   * @param val The value of the given node
+   * @param value The value of the given node
    */
-  public TreeNode(T val) {
-    this.val = val;
-    this.left = null;
-    this.right = null;
+  public BSTree(T value) {
+    this.root = new Node<>(value);
+//    this.left = null;
+//    this.right = null;
   }
 
-  public T getVal() {
-    return val;
+  public Node<T> getRoot() {
+    return root;
   }
 
   /**
@@ -63,7 +82,7 @@ public class TreeNode<T extends Comparable<T>> {
    */
   public void insert(T valToInsert) {
     var parent = getParentNodeOfValueToBeInserted(valToInsert);
-    parent.insertNewChild(valToInsert);
+    insertNewChild(valToInsert, parent);
   }
 
   /**
@@ -72,13 +91,13 @@ public class TreeNode<T extends Comparable<T>> {
    * @param valToInsert Value of the new TreeNode to be inserted
    * @return Parent TreeNode of `valToInsert`
    */
-  private TreeNode<T> getParentNodeOfValueToBeInserted(T valToInsert) {
-    TreeNode<T> parent = null;
-    var curr = this;
+  private Node<T> getParentNodeOfValueToBeInserted(T valToInsert) {
+    Node<T> parent = null;
+    Node<T> curr = this.root;
 
     while (curr != null) {
       parent = curr;
-      curr = curr.traverseOneLevelDown(valToInsert);
+      curr = traverseOneLevelDown(valToInsert, curr);
     }
 
     return parent;
@@ -91,11 +110,11 @@ public class TreeNode<T extends Comparable<T>> {
    * @param value The value of the TreeNode that would be inserted beneath self
    * @return The child TreeNode of self which represents the subtree where `value` would be inserted
    */
-  private TreeNode<T> traverseOneLevelDown(T value) {
-    if (this.isGreaterThan(value)) {
-      return this.left;
+  private Node<T> traverseOneLevelDown(T value, Node<T> node) {
+    if (isGreaterThan(value, node.val)) {
+      return node.left;
     }
-    return this.right;
+    return node.right;
   }
 
   /**
@@ -105,24 +124,21 @@ public class TreeNode<T extends Comparable<T>> {
    *
    * @param valToInsert Value of the new TreeNode to be inserted
    */
-  private void insertNewChild(T valToInsert) {
-    if (this.isLessThanOrEqualTo(valToInsert)) {
-      this.setRight(new TreeNode<>(valToInsert));
+  private void insertNewChild(T valToInsert, Node<T> parent) {
+    if (isLessThanOrEqualTo(valToInsert, parent.val)) {
+      parent.setRight(new Node<>(valToInsert));
     } else {
-      this.setLeft(new TreeNode<>(valToInsert));
+      parent.setLeft(new Node<>(valToInsert));
     }
   }
 
-  private boolean isGreaterThan(T val) {
-    return this.val.compareTo(val) > 0;
+  private boolean isGreaterThan(T valToInsert, T currentVal) {
+    return currentVal.compareTo(valToInsert) > 0;
   }
 
-  private boolean isLessThanOrEqualTo(T val) {
-    return this.val.compareTo(val) < 1;
+  private boolean isLessThanOrEqualTo(T valToInsert, T currentVal) {
+    return currentVal.compareTo(valToInsert) < 1;
   }
 
-  @Override
-  public String toString() {
-    return val.toString();
-  }
+
 }

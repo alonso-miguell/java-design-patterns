@@ -37,7 +37,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Iterator sequence diagram](./etc/iterator-sequence-diagram.png)
+![Iterator sequence diagram](etc/iterator-sequence-diagram.png)
 
 ## Programmatic Example of Iterator Pattern in Java
 

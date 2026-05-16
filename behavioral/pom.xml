@@ -14,6 +14,7 @@
     <modules>
         <module>strategy</module>
         <module>command</module>
+        <module>iterator</module>
     </modules>
 
 </project>

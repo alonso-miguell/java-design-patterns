@@ -29,10 +29,11 @@ import static com.iluwatar.iterator.list.ItemType.POTION;
 import static com.iluwatar.iterator.list.ItemType.RING;
 import static com.iluwatar.iterator.list.ItemType.WEAPON;
 
-import com.iluwatar.iterator.bst.BstIterator;
-import com.iluwatar.iterator.bst.TreeNode;
+import com.iluwatar.iterator.bst.BstNodeIterator;
+import com.iluwatar.iterator.bst.BSTree;
 import com.iluwatar.iterator.list.ItemType;
 import com.iluwatar.iterator.list.TreasureChest;
+import com.iluwatar.iterator.list.TreasureChestItemIterator;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -51,7 +52,8 @@ public class App {
   private static void demonstrateTreasureChestIteratorForType(ItemType itemType) {
     LOGGER.info("------------------------");
     LOGGER.info("Item Iterator for ItemType " + itemType + ": ");
-    var itemIterator = TREASURE_CHEST.iterator(itemType);
+//    Iterator<Item> itemIterator = TREASURE_CHEST.iterator(itemType);
+    TreasureChestItemIterator itemIterator = new TreasureChestItemIterator(TREASURE_CHEST, itemType);
     while (itemIterator.hasNext()) {
       LOGGER.info(itemIterator.next().toString());
     }
@@ -60,15 +62,15 @@ public class App {
   private static void demonstrateBstIterator() {
     LOGGER.info("------------------------");
     LOGGER.info("BST Iterator: ");
-    var root = buildIntegerBst();
-    var bstIterator = new BstIterator<>(root);
+    BSTree<Integer> bsTree = buildIntegerBst();
+    BstNodeIterator<Integer> bstIterator = new BstNodeIterator<>(bsTree);
     while (bstIterator.hasNext()) {
-      LOGGER.info("Next node: " + bstIterator.next().getVal());
+      LOGGER.info("Next node: " + bstIterator.next());
     }
   }
 
-  private static TreeNode<Integer> buildIntegerBst() {
-    var root = new TreeNode<>(8);
+  private static BSTree<Integer> buildIntegerBst() {
+    BSTree<Integer> root = new BSTree<>(8);
 
     root.insert(3);
     root.insert(10);

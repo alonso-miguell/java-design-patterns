@@ -148,7 +148,6 @@
         <module>identity-map</module>
         <module>intercepting-filter</module>
         <module>interpreter</module>
-        <module>iterator</module>
         <module>layered-architecture</module>
         <module>lazy-loading</module>
         <module>leader-election</module>
