@@ -11,6 +11,19 @@ tag:
   - Object composition
   - Polymorphism
 ---
+# GOF Design pattern
+### TLDR;
+
+Basically this is creating an extra interface to use "visitors" on a well-defined hierarchy of objects.
+We know that hierarchy won't change but the operations on those objects can do it frequently (Compilers and interpreters, static analysis tools )
+so we need to alter the operations on these objects without changing their structure, this is rarely used in
+real-world apps and its controversial because it's the opposite of open/closed principle.
+
+Imagine a seasoned insurance agent who’s eager to get new customers. He can visit every building in a neighborhood, trying to sell insurance to everyone he meets. Depending on the type of organization that occupies the building, he can offer specialized insurance policies:
+- If it’s a residential building, he sells medical insurance.
+- If it’s a bank, he sells theft insurance.
+- If it’s a coffee shop, he sells fire and flood insurance.
+![Visitor example](etc/img.png)
 
 ## Intent of Visitor Design Pattern
 
