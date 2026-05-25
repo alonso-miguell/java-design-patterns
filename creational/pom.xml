@@ -13,6 +13,11 @@
 
     <modules>
         <module>abstract-factory</module>
+        <module>factory</module>
+        <module>factory-kit</module>
+        <module>factory-method</module>
+        <module>prototype</module>
+
     </modules>
 
 </project>

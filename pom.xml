@@ -128,9 +128,6 @@
         <module>execute-around</module>
         <module>extension-objects</module>
         <module>facade</module>
-        <module>factory</module>
-        <module>factory-kit</module>
-        <module>factory-method</module>
         <module>fanout-fanin</module>
         <module>feature-toggle</module>
         <module>filterer</module>
@@ -194,7 +191,6 @@
         <module>producer-consumer</module>
         <module>promise</module>
         <module>property</module>
-        <module>prototype</module>
         <module>proxy</module>
         <module>publish-subscribe</module>
         <module>queue-based-load-leveling</module>

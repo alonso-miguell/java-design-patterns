@@ -18,6 +18,9 @@ tag:
 * Object Kit
 * Toolkit
 
+# Not mentioned in books, just repo invention 
+### TLDR;
+
 ## Intent of Factory Kit Design Pattern
 
 The Factory Kit Pattern in Java is a powerful design pattern that helps in creating factories with separated builder and factory interfaces. This pattern is essential for managing complex object creation scenarios.
@@ -34,7 +37,7 @@ In plain words
 
 Sequence diagram
 
-![Factory Kit sequence diagram](./etc/factory-kit-sequence-diagram.png)
+![Factory Kit sequence diagram](etc/factory-kit-sequence-diagram.png)
 
 ## Programmatic Example of Factory Kit Pattern in Java
 

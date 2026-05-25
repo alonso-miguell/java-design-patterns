@@ -12,6 +12,16 @@ tag:
   - Polymorphism
 ---
 
+## Also known as
+
+* Virtual Constructor
+
+# Head First Design Patterns  (Freeman & Robson)
+
+### TLDR;
+> Heads up: This one is mentioned in Head First Design Patterns (Freeman & Robson) — they explicitly call it out as a programming idiom, not a true pattern, and spend time warning readers not to confuse it with Factory Method.
+
+
 ## Intent of Factory Design Pattern
 
 The Factory Design Pattern in Java is a creational pattern that defines an interface for creating an object but allows subclasses to alter the type of objects that will be created. This pattern promotes flexibility and scalability in your codebase.
@@ -28,7 +38,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Factory sequence diagram](./etc/factory-sequence-diagram.png)
+![Factory sequence diagram](etc/factory-sequence-diagram.png)
 
 ## Programmatic Example of Factory Pattern in Java
 

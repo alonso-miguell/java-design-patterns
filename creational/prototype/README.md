@@ -37,7 +37,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Prototype sequence diagram](./etc/prototype-sequence-diagram.png)
+![Prototype sequence diagram](etc/prototype-sequence-diagram.png)
 
 ## Programmatic Example of Prototype Pattern in Java
 

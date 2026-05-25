@@ -16,6 +16,9 @@ tag:
 
 * Virtual Constructor
 
+# GOF Design pattern
+### TLDR;
+
 ## Intent of Factory Method Design Pattern
 
 Define an interface for creating an object using the Factory Method Pattern, but let subclasses decide which class to instantiate. This creational design pattern lets a class defer instantiation to subclasses, enhancing code flexibility and maintenance.
@@ -38,7 +41,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Factory Method sequence diagram](./etc/factory-method-sequence-diagram.png)
+![Factory Method sequence diagram](etc/factory-method-sequence-diagram.png)
 
 ## Programmatic Example of Factory Method Pattern in Java
 
