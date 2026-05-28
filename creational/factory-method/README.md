@@ -18,6 +18,8 @@ tag:
 
 # GOF Design pattern
 ### TLDR;
+Basically we have an interface which must have a createObject method, this interface will be implemented by the factory (creator) class, this subclass will define the kind of object created, usually of the same kind of 
+factory implemented. Heads up that factory classes can have additional business logic and their main role isn't just creating objects.
 
 ## Intent of Factory Method Design Pattern
 
