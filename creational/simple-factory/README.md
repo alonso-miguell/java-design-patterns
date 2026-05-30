@@ -19,7 +19,7 @@ tag:
 # Head First Design Patterns  (Freeman & Robson)
 
 ### TLDR;
-This is like a shortcut version of factory method, here we don't use inheritance for redefining a factory method, we just use params to define which kind of object will be created. 
+This is like a shortcut version of factory method, here we don't use inheritance for redefining a factory method, we just use params to define which kind of object will be created. ``Unlike factory-kit, here we define the required types INSIDE the factory instead of the client.``
 > Heads up: This one is mentioned in Head First Design Patterns (Freeman & Robson) — they explicitly call it out as a programming idiom, not a true pattern, and spend time warning readers not to confuse it with Factory Method.
 
 

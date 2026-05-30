@@ -20,6 +20,8 @@ tag:
 
 # Not mentioned in books, just repo invention 
 ### TLDR;
+The sample provided is a little extra-complex due to functional interfaces which might obscure the pattern. Basically this is similar to simple factory, but instead of deciding the kind of objects to be created `WITHIN` 
+the factory, the client will decide the required types, so it first REGISTERS the ``creator (factory)`` then REGISTERS the ``types (builders)`` required. Take at look at the ``FactoryKitSimplified``
 
 ## Intent of Factory Kit Design Pattern
 

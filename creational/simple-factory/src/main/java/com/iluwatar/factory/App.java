@@ -40,6 +40,8 @@ public class App {
   /** Program main entry point. */
   public static void main(String[] args) {
     LOGGER.info("The alchemist begins his work.");
+
+    //here we're just getting hat we need, but we didn't define the types in the client
     var coin1 = CoinFactory.getCoin(CoinType.COPPER);
     var coin2 = CoinFactory.getCoin(CoinType.GOLD);
     LOGGER.info(coin1.getDescription());

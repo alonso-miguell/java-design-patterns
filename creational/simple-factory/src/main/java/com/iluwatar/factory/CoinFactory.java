@@ -29,6 +29,7 @@ public class CoinFactory {
 
   /** Factory method takes as a parameter the coin type and calls the appropriate class. */
   public static Coin getCoin(CoinType type) {
+    //this is like having a switch declaring each type, but instead we use the enum
     return type.getConstructor().get();
   }
 }
