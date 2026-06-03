@@ -45,23 +45,31 @@ public class App {
    * @param args command line args
    */
   public static void main(String[] args) {
+    Mage factoryMage=new ElfMage("cooking");
     var factory =
         new HeroFactoryImpl(
-            new ElfMage("cooking"), new ElfWarlord("cleaning"), new ElfBeast("protecting"));
+            factoryMage, new ElfWarlord("cleaning"), new ElfBeast("protecting"));
     var mage = factory.createMage();
     var warlord = factory.createWarlord();
-    var beast = factory.createBeast();
+//    var beast = factory.createBeast();
     LOGGER.info(mage.toString());
+    LOGGER.info("Is factory mage equals to mage?: {} ", factoryMage.equals(mage));
+    LOGGER.info("Is factory mage the same object to mage?: {} ", factoryMage==mage);
     LOGGER.info(warlord.toString());
-    LOGGER.info(beast.toString());
+//    LOGGER.info(beast.toString());
+
+    Beast elfBeast= new ElfBeast("protecting");
+    Beast elfBeastClone=elfBeast.clone();
+    LOGGER.info("elfBeast equals to its clone?: {} ", elfBeast.equals(elfBeastClone));
+    LOGGER.info("elfBeast equals the same than its clone?: {} ", elfBeast==elfBeastClone);
 
     factory =
         new HeroFactoryImpl(new OrcMage("axe"), new OrcWarlord("sword"), new OrcBeast("laser"));
     mage = factory.createMage();
     warlord = factory.createWarlord();
-    beast = factory.createBeast();
+//    beast = factory.createBeast();
     LOGGER.info(mage.toString());
     LOGGER.info(warlord.toString());
-    LOGGER.info(beast.toString());
+//    LOGGER.info(beast.toString());
   }
 }

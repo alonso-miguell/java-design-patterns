@@ -45,7 +45,7 @@ public class HeroFactoryImpl implements HeroFactory {
   }
 
   /** Create beast. */
-  public Beast createBeast() {
-    return beast.copy();
-  }
+//  public Beast createBeast() {
+//    return beast.copy();
+//  }
 }

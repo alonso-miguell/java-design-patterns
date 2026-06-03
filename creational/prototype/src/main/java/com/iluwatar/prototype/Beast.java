@@ -30,7 +30,10 @@ import lombok.NoArgsConstructor;
 /** Beast. */
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
-public abstract class Beast extends Prototype<Beast> {
+public abstract class Beast {
 
   public Beast(Beast source) {}
+
+  // we can create our clone method instead of using java's Cloneable
+  public abstract Beast clone();
 }

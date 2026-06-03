@@ -43,4 +43,9 @@ public class OrcBeast extends Beast {
   public String toString() {
     return "Orcish wolf attacks with " + weapon;
   }
+
+  @Override
+  public Beast clone() {
+    return new OrcBeast(this);
+  }
 }

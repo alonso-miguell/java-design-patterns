@@ -43,4 +43,9 @@ public class ElfBeast extends Beast {
   public String toString() {
     return "Elven eagle helps in " + helpType;
   }
+
+  @Override
+  public Beast clone() {
+    return new ElfBeast(this);
+  }
 }

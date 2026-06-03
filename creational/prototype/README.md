@@ -15,6 +15,20 @@ tag:
 
 * Clone
 
+# GOF Design pattern
+### TLDR;
+Instead of thinking of cloning manufactured protype items, this pattern is more similar to mitotic cell division, due to the object cloning itself. In this pattern we create an interface with a clone method that will create a new object based on the current one and will copy its properties. Java also has an out of the box intefacce for this ``Cloneable`` which we can use for accessing to the clone method, but it's widely considered broken and avoided in modern code. Object.clone() does a shallow copy by default, 
+nested objects share references. Take a look at `Prototype` class which follow this approach and `Beast` class follows the other one, which is a more recommended approach (to create a depp copy and avoid nested references). It's recommended when:
+- Object initialization is expensive (DB calls, file I/O, network)
+- You need many objects with slight variations from a base state
+- You want to snapshot an object's state and create variations from it
+
+Cell division
+![Cell division](etc/division.png)
+![Cell division](etc/prototype-1.5x.png)
+
+
+
 ## Intent of Prototype Design Pattern
 
 The Prototype pattern is used to specify the kinds of objects to create using a prototypical instance, and create new instances through object cloning.
