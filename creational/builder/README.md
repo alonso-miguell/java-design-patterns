@@ -9,6 +9,69 @@ tag:
   - Instantiation
   - Object composition
 ---
+# GOF Design pattern
+### TLDR;
+Builder focuses more on how a complex object is created step by step, rather than creating the object. Separating the construction process from the final representation. According to GOF we can also have a Director which wil orchestrate the kind of objects we wanna build the Builder interfaces we define don't specify a kind of object in their ``getResult()`` so e can use the same interface for unrelated objects. Instead we would use the same builder for getting the result.
+
+>``Director`` is completely optional an rarely seen and used in business code, more like a GOF formality than really used in practice.
+
+```java
+interface Builder(){
+    reset();
+    setSeats();
+    setEngine();
+    ....
+}
+
+class CarBuilder implements Builder{
+    ... //Implements all methods
+    
+    //Method for getting the object not defined in the interface
+    Car getResult(){
+        ....
+        return new Car(this);
+    } 
+}
+
+class CarBookBuilder implements Builder{
+    ... //Implements all methods
+
+    //Method for getting the object not defined in the interface
+    Book getResult(){
+        ....
+        return new Book(this);
+    }
+}
+
+//  Director is just a class containing `recipes` for building objects
+class Director{
+    void buildSportCar(CarBuilder builder){
+        builder.setSeats(320).setEngine("Sport A73J");
+    }
+    
+    void buildCommonCar(CarBuilder builder){
+        return builder.setSeats(4).setEngine("Common A73J");
+    }
+
+    void buildF1BookCar(CarBookBuilder builder){
+        return builder.setSeats(1).setEngine("Fastest X20J");
+    }
+}
+
+// Since the interface doesn't define a getResult to be shareable 
+// between different object we need to get the result from the same builder
+Director director= new Director();
+CarBuilder carBuilder= new CarBuilder();
+director.buildSportCar(carBuilder);
+Car sportCar=carBuilder.getResult();
+...
+...
+CarBookBuilder carBookBuilder= new CarBookBuilder();
+director.buildF1BookCar(carBookBuilder);
+Book f1BookCar=carBookBuilder.getResult();
+
+
+```
 
 ## Intent of Builder Design Pattern
 
