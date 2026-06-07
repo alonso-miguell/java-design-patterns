@@ -46,6 +46,21 @@ public final class BillPughImplementation {
    * The InstanceHolder is a static inner class, and it holds the Singleton instance. It is not
    * loaded into memory until the getInstance() method is called.
    */
+
+  /**
+   * First call to getInstance():
+   * JVM sees InstanceHolder.instance referenced for the first time
+   * JVM loads and initializes InstanceHolder
+   * The static field instance = new BillPughImplementation() runs — once
+   * The instance is stored in InstanceHolder.instance
+   * Returns the instance
+   *
+   * Every subsequent call to getInstance():
+   *
+   * InstanceHolder is already loaded — JVM does not reinitialize it
+   * InstanceHolder.instance already exists
+   * Returns the same instance directly
+   */
   private static class InstanceHolder {
     /** Singleton instance of the class. */
     private static BillPughImplementation instance = new BillPughImplementation();

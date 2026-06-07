@@ -15,6 +15,22 @@ tag:
 
 * Single Instance
 
+# GOF Design pattern
+### TLDR;
+Ensure a Java class only has one instance, and provide a global point of access to this singleton instance. It uses lazy initiation and it's useful for global variables. If used with multithreading we need to use lock mechanisms to avoid race conditions.
+> Singleton is considered an antipattern by some because of:
+> 1. Global state in disguise — any code anywhere can modify it, making behavior unpredictable
+> 2. Hidden dependencies — callers don't reveal they depend on it, making code hard to understand
+> 3. Kills testability — you can't substitute it with a mock or test double
+> 4. Concurrency problems — naive implementation isn't thread safe, fixing it adds ugly complexity
+Violates SRP — manages its own lifecycle AND its business logic at the same time
+> 
+> However It's not universally bad. Legitimate uses:
+> 1. Truly stateless utilities — a logger, a thread pool, a connection pool where shared state is the point
+> 2. Immutable configuration — loaded once at startup, never modified
+> 3. Framework-managed singletons — Spring beans are singletons by default, but Spring manages the lifecycle and injects them, so the testability problem goes away
+
+
 ## Intent of Singleton Design Pattern
 
 Ensure a Java class only has one instance, and provide a global point of access to this singleton instance.
