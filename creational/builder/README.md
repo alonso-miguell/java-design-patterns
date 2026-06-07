@@ -42,7 +42,7 @@ As you can see, the number of constructor parameters can quickly become overwhel
 
 Sequence diagram
 
-![Builder sequence diagram](./etc/builder-sequence-diagram.png)
+![Builder sequence diagram](etc/builder-sequence-diagram.png)
 
 ## Programmatic Example of Builder Pattern in Java
 

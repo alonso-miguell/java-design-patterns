@@ -35,7 +35,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Singleton Pattern sequence diagram](./etc/singleton-sequence-diagram.png)
+![Singleton Pattern sequence diagram](etc/singleton-sequence-diagram.png)
 
 ## Programmatic Example of Singleton Pattern in Java
 

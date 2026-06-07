@@ -87,7 +87,6 @@
         <module>async-method-invocation</module>
         <module>balking</module>
         <module>bloc</module>
-        <module>builder</module>
         <module>business-delegate</module>
         <module>bytecode</module>
         <module>caching</module>
@@ -213,7 +212,6 @@
         <module>session-facade</module>
         <module>sharding</module>
         <module>single-table-inheritance</module>
-        <module>singleton</module>
         <module>spatial-partition</module>
         <module>special-case</module>
         <module>specification</module>
