@@ -18,6 +18,8 @@
 
         <module>bridge</module>
         <module>decorator</module>
+        <module>adapter</module>
+        <module>facade</module>
     </modules>
 
 </project>

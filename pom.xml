@@ -80,7 +80,6 @@
         <module>abstract-document</module>
         <module>active-object</module>
         <module>acyclic-visitor</module>
-        <module>adapter</module>
         <module>ambassador</module>
         <module>anti-corruption-layer</module>
         <module>arrange-act-assert</module>
@@ -126,7 +125,6 @@
         <module>event-sourcing</module>
         <module>execute-around</module>
         <module>extension-objects</module>
-        <module>facade</module>
         <module>fanout-fanin</module>
         <module>feature-toggle</module>
         <module>filterer</module>

@@ -37,7 +37,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Adapter sequence diagram](./etc/adapter-sequence-diagram.png "Adapter sequence diagram")
+![Adapter sequence diagram](etc/adapter-sequence-diagram.png "Adapter sequence diagram")
 
 ## Programmatic Example of Adapter Pattern in Java
 

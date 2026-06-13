@@ -35,7 +35,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Facade sequence diagram](./etc/facade-sequence-diagram.png)
+![Facade sequence diagram](etc/facade-sequence-diagram.png)
 
 ## Programmatic Example of Facade Pattern in Java
 
