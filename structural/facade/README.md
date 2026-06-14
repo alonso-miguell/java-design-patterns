@@ -14,6 +14,11 @@ tag:
   - Interface
   - Object composition
 ---
+# GOF Design pattern
+### TLDR;
+Basically is just an interface which provides easier/simplified access for a client to complex functions to one or many subsystems.
+
+![Facade](etc/img.png)
 
 ## Intent of Facade Design Pattern
 
