@@ -24,16 +24,15 @@
  */
 package com.iluwatar.adapter;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
- * Device class (adaptee in the pattern). We want to reuse this class. Fishing boat moves by
- * sailing.
+ * Adapter class. Adapts the interface of the device ({@link FishingBoat}) into {@link RowingBoat}
+ * interface expected by the client ({@link Captain}).
  */
-@Slf4j
-class FishingBoat {
+public class FishingBoatObjectAdapter implements RowingBoat {
 
-  void sail() {
-    LOGGER.info("The fishing boat is sailing");
+  private final FishingBoat boat = new FishingBoat();
+
+  public final void row() {
+    boat.sail();
   }
 }

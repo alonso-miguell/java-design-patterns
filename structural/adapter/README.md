@@ -12,6 +12,15 @@ tag:
   - Object composition
   - Wrapping
 ---
+# GOF Design pattern
+### TLDR;
+Adapter pattern just focuses on making an interface compatible with another one, there are two kinds, object and class. 
+- Object is based on composition (holds a reference to the object we want to adapt, aka adaptee) 
+- Class adapter is based on multiple-inheritance, which is problematic/limited in certain languages like java (where we can only extend one class) so the object adapter is the natural-election in these ones.
+
+> Check the added class adapter example
+
+![Adapter](etc/adapter.jpg "Adapter sequence diagram")
 
 ## Also known as
 

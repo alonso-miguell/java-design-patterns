@@ -46,17 +46,17 @@ class AdapterPatternTest {
   void setup() {
     beans = new HashMap<>();
 
-    var fishingBoatAdapter = spy(new FishingBoatAdapter());
+    var fishingBoatAdapter = spy(new FishingBoatObjectAdapter());
     beans.put(FISHING_BEAN, fishingBoatAdapter);
 
     var captain = new Captain();
-    captain.setRowingBoat((FishingBoatAdapter) beans.get(FISHING_BEAN));
+    captain.setRowingBoat((FishingBoatObjectAdapter) beans.get(FISHING_BEAN));
     beans.put(ROWING_BEAN, captain);
   }
 
   /**
    * This test asserts that when we use the row() method on a captain bean(client), it is internally
-   * calling sail method on the fishing boat object. The Adapter ({@link FishingBoatAdapter} )
+   * calling sail method on the fishing boat object. The Adapter ({@link FishingBoatObjectAdapter} )
    * converts the interface of the target class ( {@link FishingBoat}) into a suitable one expected
    * by the client ({@link Captain} ).
    */

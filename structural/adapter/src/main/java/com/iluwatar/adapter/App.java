@@ -24,6 +24,9 @@
  */
 package com.iluwatar.adapter;
 
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * An adapter helps two incompatible interfaces to work together. This is the real world definition
  * for an adapter. Interfaces may be incompatible but the inner functionality should suit the need.
@@ -34,7 +37,7 @@ package com.iluwatar.adapter;
  * interface whereas the object adapter uses composition to contain the adaptee in the adapter
  * object. This example uses the object adapter approach.
  *
- * <p>The Adapter ({@link FishingBoatAdapter}) converts the interface of the adaptee class ({@link
+ * <p>The Adapter ({@link FishingBoatObjectAdapter}) converts the interface of the adaptee class ({@link
  * FishingBoat}) into a suitable one expected by the client ({@link RowingBoat}).
  *
  * <p>The story of this implementation is this. <br>
@@ -43,6 +46,7 @@ package com.iluwatar.adapter;
  * captain needs a rowing boat which he can operate. The spec is in {@link RowingBoat}. We will use
  * the Adapter pattern to reuse {@link FishingBoat}.
  */
+@Slf4j
 public final class App {
 
   private App() {}
@@ -55,7 +59,12 @@ public final class App {
   public static void main(final String[] args) {
     // The captain can only operate rowing boats but with adapter he is able to
     // use fishing boats as well
-    var captain = new Captain(new FishingBoatAdapter());
-    captain.row();
+    Captain objectCaptain = new Captain(new FishingBoatObjectAdapter());
+    LOGGER.info("Using object adapter...");
+    objectCaptain.row();
+
+    LOGGER.info("Using class adapter...");
+    Captain classCaptain = new Captain(new FishingBoatClassAdapter());
+    classCaptain.row();
   }
 }
