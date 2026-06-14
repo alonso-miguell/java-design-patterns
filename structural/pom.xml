@@ -20,6 +20,8 @@
         <module>decorator</module>
         <module>adapter</module>
         <module>facade</module>
+        <module>flyweight</module>
+        <module>proxy</module>
     </modules>
 
 </project>

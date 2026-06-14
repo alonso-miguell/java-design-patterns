@@ -32,7 +32,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Flyweight sequence diagram](./etc/flyweight-sequence-diagram.png)
+![Flyweight sequence diagram](etc/flyweight-sequence-diagram.png)
 
 ## Programmatic Example of Flyweight Pattern in Java
 

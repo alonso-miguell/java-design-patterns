@@ -38,7 +38,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Proxy sequence diagram](./etc/proxy-sequence-diagram.png)
+![Proxy sequence diagram](etc/proxy-sequence-diagram.png)
 
 ## Programmatic Example of Proxy Pattern in Java
 

@@ -130,7 +130,6 @@
         <module>filterer</module>
         <module>fluent-interface</module>
         <module>flux</module>
-        <module>flyweight</module>
         <module>front-controller</module>
         <module>function-composition</module>
         <module>game-loop</module>
@@ -188,7 +187,6 @@
         <module>producer-consumer</module>
         <module>promise</module>
         <module>property</module>
-        <module>proxy</module>
         <module>publish-subscribe</module>
         <module>queue-based-load-leveling</module>
         <module>reactor</module>
