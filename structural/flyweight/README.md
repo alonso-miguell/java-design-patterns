@@ -11,6 +11,13 @@ tag:
   - Optimization
   - Performance
 ---
+# GOF Design pattern
+### TLDR;
+
+We can say about the flyweight pattern that this is merely an optimization pattern used for reducing memory costs in exchange of computation/processing time. This pattern focuses on dividing intrinsic and extrinsic states.
+- Intrinsic state: This is the state that lives within the flyweight object, lets say in a game that uses millions of bullets, this would be: the type of bullet (sprite, size, amount of damage) and therefore it can be shared. Basically the Flyweight is essentially a type descriptor
+- Extrinsic state: This state can be computed or stored by the flyweight's context. In the previous example this would be the objects/instances of such types (flyweights). Bullets which can have their own type, position (x, y, z). Because flyweight objects are sharable they shouldn't be instantiated directly, there must be a factory which will create them if they don't exist, otherwise return the object (similar to a singleton). 
+> Flyweight pattern should be used when the application doesn't depend on object identity since many objects can return the same identity/reference.
 
 ## Intent of Flyweight Design Pattern
 
