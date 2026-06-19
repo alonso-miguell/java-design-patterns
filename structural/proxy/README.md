@@ -13,7 +13,16 @@ tag:
   - Security
   - Wrapping
 ---
+# GOF Design pattern
+### TLDR;
 
+So this one basically implements/extend the interface of the object we want to intercept. There are many known uses of this pattern. Like:
+- Virtual Proxies: In applications that need heavy resources like large images or complex calculations, virtual proxies can be used to instantiate objects only when needed (lazy initialization).
+- Remote Proxies: Represents an object that lives in a different address space — another JVM, another machine, another service. The client talks to the proxy as if the object were local; the proxy handles the network call.
+- Protection Proxies: Control access to the original object to ensure proper authorization/roles.
+- Logging/Auditing Proxy — cross-cutting concerns: Intercepts calls to add behavior (logging, metrics, caching, timing) without touching the real object.
+
+> Mockito uses this pattern to mock beans and implement their interfaces, so the actual class never get called
 ## Also known as
 
 * Surrogate
@@ -125,8 +134,8 @@ Program output:
 08:42:06.183 [main] INFO com.iluwatar.proxy.IvoryTower -- Red wizard enters the tower.
 08:42:06.186 [main] INFO com.iluwatar.proxy.IvoryTower -- White wizard enters the tower.
 08:42:06.186 [main] INFO com.iluwatar.proxy.IvoryTower -- Black wizard enters the tower.
-08:42:06.186 [main] INFO com.iluwatar.proxy.WizardTowerProxy -- Green wizard is not allowed to enter!
-08:42:06.186 [main] INFO com.iluwatar.proxy.WizardTowerProxy -- Brown wizard is not allowed to enter!
+08:42:06.186 [main] INFO com.iluwatar.proxy.WizardTowerProtectionProxy -- Green wizard is not allowed to enter!
+08:42:06.186 [main] INFO com.iluwatar.proxy.WizardTowerProtectionProxy -- Brown wizard is not allowed to enter!
 ```
 
 ## When to Use the Proxy Pattern in Java

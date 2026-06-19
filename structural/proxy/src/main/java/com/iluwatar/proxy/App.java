@@ -24,6 +24,8 @@
  */
 package com.iluwatar.proxy;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * A proxy, in its most general form, is a class functioning as an interface to something else. The
  * proxy could interface to anything: a network connection, a large object in memory, a file, or
@@ -35,19 +37,30 @@ package com.iluwatar.proxy;
  * wrapper class as the proxy. The wrapper class, which is the proxy, can add additional
  * functionality to the object of interest without changing the object's code.
  *
- * <p>In this example the proxy ({@link WizardTowerProxy}) controls access to the actual object (
+ * <p>In this example the proxy ({@link WizardTowerProtectionProxy}) controls access to the actual object (
  * {@link IvoryTower}).
  */
+@Slf4j
 public class App {
 
   /** Program entry point. */
   public static void main(String[] args) {
 
-    var proxy = new WizardTowerProxy(new IvoryTower());
-    proxy.enter(new Wizard("Red wizard"));
-    proxy.enter(new Wizard("White wizard"));
-    proxy.enter(new Wizard("Black wizard"));
-    proxy.enter(new Wizard("Green wizard"));
-    proxy.enter(new Wizard("Brown wizard"));
+    LOGGER.info("**************** ProtectionProxy ***************************");
+    WizardTower protectionProxy = new WizardTowerProtectionProxy(new IvoryTower());
+    protectionProxy.enter(new Wizard("Red wizard"));
+    protectionProxy.enter(new Wizard("White wizard"));
+    protectionProxy.enter(new Wizard("Black wizard"));
+    protectionProxy.enter(new Wizard("Green wizard"));
+    protectionProxy.enter(new Wizard("Brown wizard"));
+
+    LOGGER.info("**************** VirtualProxy ***************************");
+    WizardTower virtualProxy = new WizardTowerVirtualProxy(new IvoryTower());
+    virtualProxy.enter(new Wizard("Red wizard"));
+    virtualProxy.enter(new Wizard("White wizard"));
+    virtualProxy.enter(new Wizard("White wizard"));
+    virtualProxy.enter(new Wizard("Black wizard"));
+    virtualProxy.enter(new Wizard("Black wizard"));
+    virtualProxy.enter(new Wizard("Green wizard"));
   }
 }

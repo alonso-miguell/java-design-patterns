@@ -25,28 +25,35 @@
 package com.iluwatar.proxy;
 
 import lombok.extern.slf4j.Slf4j;
+import java.util.HashMap;
+import java.util.Map;
 
 /** The proxy controlling access to the {@link IvoryTower}. */
 @Slf4j
-public class WizardTowerProxy implements WizardTower {
+public class WizardTowerVirtualProxy implements WizardTower {
 
-  private static final int NUM_WIZARDS_ALLOWED = 3;
-
-  private int numWizards;
+  private Map<String, Wizard> wizardMap;
 
   private final WizardTower tower;
 
-  public WizardTowerProxy(WizardTower tower) {
+  public WizardTowerVirtualProxy(WizardTower tower) {
     this.tower = tower;
   }
 
   @Override
   public void enter(Wizard wizard) {
-    if (numWizards < NUM_WIZARDS_ALLOWED) {
+    //example of lazy initialization, not created until needed
+    if(wizardMap==null){
+      wizardMap=new HashMap<>();
+    }
+
+    //example of using cache
+    if(wizardMap.get(wizard.toString())==null){
+      wizardMap.put(wizard.toString(), wizard);
       tower.enter(wizard);
-      numWizards++;
-    } else {
-      LOGGER.info("{} is not allowed to enter!", wizard);
+    }
+    else {
+      LOGGER.info("{} is already in the castle!", wizard);
     }
   }
 }

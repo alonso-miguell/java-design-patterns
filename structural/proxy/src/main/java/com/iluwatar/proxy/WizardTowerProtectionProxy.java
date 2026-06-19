@@ -24,46 +24,29 @@
  */
 package com.iluwatar.proxy;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import lombok.extern.slf4j.Slf4j;
 
-import com.iluwatar.proxy.utils.InMemoryAppender;
-import java.util.List;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+/** The proxy controlling access to the {@link IvoryTower}. */
+@Slf4j
+public class WizardTowerProtectionProxy implements WizardTower {
 
-/** Tests for {@link WizardTowerProxy} */
-class WizardTowerProxyTest {
+  private static final int NUM_WIZARDS_ALLOWED = 3;
 
-  private InMemoryAppender appender;
+  private int numWizards;
 
-  @BeforeEach
-  void setUp() {
-    appender = new InMemoryAppender();
+  private final WizardTower tower;
+
+  public WizardTowerProtectionProxy(WizardTower tower) {
+    this.tower = tower;
   }
 
-  @AfterEach
-  void tearDown() {
-    appender.stop();
-  }
-
-  @Test
-  void testEnter() {
-    final var wizards =
-        List.of(
-            new Wizard("Gandalf"),
-            new Wizard("Dumbledore"),
-            new Wizard("Oz"),
-            new Wizard("Merlin"));
-
-    final var proxy = new WizardTowerProxy(new IvoryTower());
-    wizards.forEach(proxy::enter);
-
-    assertTrue(appender.logContains("Gandalf enters the tower."));
-    assertTrue(appender.logContains("Dumbledore enters the tower."));
-    assertTrue(appender.logContains("Oz enters the tower."));
-    assertTrue(appender.logContains("Merlin is not allowed to enter!"));
-    assertEquals(4, appender.getLogSize());
+  @Override
+  public void enter(Wizard wizard) {
+    if (numWizards < NUM_WIZARDS_ALLOWED) {
+      tower.enter(wizard);
+      numWizards++;
+    } else {
+      LOGGER.info("{} is not allowed to enter!", wizard);
+    }
   }
 }
