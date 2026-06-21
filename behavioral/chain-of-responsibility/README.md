@@ -17,6 +17,21 @@ tag:
 * Chain of Objects
 * Responsibility Chain
 
+# GOF Design pattern
+### TLDR;
+We use this pattern when we want to define a request and we don't want or know the handler that can execute the request. This pattern focuses on:
+1. Creating a request
+2. Creating handlers for such request
+3. Creating a chain of handlers that will be called by the client
+4. The handlers will follow the order of the chain, each handler will decide if it can handle the request or pass it to the next handler and so on.
+
+> Note that a request can end up unhandled if there isn't any handler that can handle it.
+ 
+> In the classic GOF approach e have a Handler next; reference in each handle to follow the flow of the chain, however this couples the logic and the order. There's a more modern approach where we can use an external list that the coordinator (the client) will define. I think this approach is better.
+> This repo follows the modern approach but I've also added a classic GOF example.
+
+![Chain of Responsibility](etc/img.png)
+
 ## Intent of Chain of Responsibility Design Pattern
 
 The Chain of Responsibility pattern in Java is a behavioral design pattern that decouples the sender of a request from its receivers by giving more than one object a chance to handle the request. The receiving objects are chained and the request is passed along the chain until an object handles it.

@@ -24,6 +24,11 @@
  */
 package com.iluwatar.chain;
 
+import com.iluwatar.chain.classic.ClassicOrcCommander;
+import com.iluwatar.chain.classic.ClassicOrcOfficer;
+import com.iluwatar.chain.classic.ClassicOrcSoldier;
+import com.iluwatar.chain.classic.ClassicRequestHandler;
+
 /**
  * The Chain of Responsibility pattern is a design pattern consisting of command objects and a
  * series of processing objects. Each processing object contains logic that defines the types of
@@ -44,9 +49,22 @@ public class App {
    */
   public static void main(String[] args) {
 
-    var king = new OrcKing();
+    //OrcKing here is the mediator for the handlers
+    OrcKing king = new OrcKing();
     king.makeRequest(new Request(RequestType.DEFEND_CASTLE, "defend castle"));
     king.makeRequest(new Request(RequestType.TORTURE_PRISONER, "torture prisoner"));
     king.makeRequest(new Request(RequestType.COLLECT_TAX, "collect tax"));
+
+    // Classic weaker GOF approach using next references
+    ClassicRequestHandler soldier=new ClassicOrcSoldier();
+    ClassicRequestHandler officer=new ClassicOrcOfficer();
+    ClassicRequestHandler commander=new ClassicOrcCommander();
+
+    soldier.setNext(officer).setNext(commander);
+    soldier.handle(new Request(RequestType.DEFEND_CASTLE, "defend castle"));
+    soldier.handle(new Request(RequestType.TORTURE_PRISONER, "torture prisoner"));
+    soldier.handle(new Request(RequestType.COLLECT_TAX, "collect tax"));
+    soldier.handle(new Request(RequestType.UNKNOWN, "UNKNOWN"));
+
   }
 }

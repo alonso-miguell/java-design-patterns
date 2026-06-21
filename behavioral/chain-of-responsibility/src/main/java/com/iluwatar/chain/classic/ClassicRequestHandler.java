@@ -22,12 +22,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.iluwatar.chain;
+package com.iluwatar.chain.classic;
 
-/** RequestType enumeration. */
-public enum RequestType {
-  DEFEND_CASTLE,
-  TORTURE_PRISONER,
-  COLLECT_TAX,
-  UNKNOWN
+import com.iluwatar.chain.Request;
+
+/** RequestHandler. */
+public interface ClassicRequestHandler {
+  boolean canHandleRequest(Request req);
+
+  int getPriority();
+
+  void handle(Request req);
+
+  ClassicRequestHandler setNext(ClassicRequestHandler classicRequestHandler);
+
+  String name();
 }

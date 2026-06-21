@@ -22,12 +22,52 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.iluwatar.chain;
+package com.iluwatar.chain.classic;
 
-/** RequestType enumeration. */
-public enum RequestType {
-  DEFEND_CASTLE,
-  TORTURE_PRISONER,
-  COLLECT_TAX,
-  UNKNOWN
+import com.iluwatar.chain.Request;
+import com.iluwatar.chain.RequestHandler;
+import com.iluwatar.chain.RequestType;
+import lombok.extern.slf4j.Slf4j;
+
+/** OrcSoldier. */
+@Slf4j
+public class ClassicOrcSoldier implements ClassicRequestHandler {
+  private ClassicRequestHandler next;
+
+  @Override
+  public boolean canHandleRequest(Request req) {
+    return req.getRequestType() == RequestType.COLLECT_TAX;
+  }
+
+  @Override
+  public int getPriority() {
+    return 1;
+  }
+
+  @Override
+  public void handle(Request req) {
+
+    if(canHandleRequest(req)) {
+      req.markHandled();
+      LOGGER.info("{} handling request \"{}\"", name(), req);
+    }
+    else{
+      if(next==null){
+        LOGGER.warn("Unknown request, can't be handled: {}",req);
+        return;
+      }
+      next.handle(req);
+    }
+  }
+
+  @Override
+  public ClassicRequestHandler setNext(ClassicRequestHandler classicRequestHandler) {
+    this.next=classicRequestHandler;
+    return  classicRequestHandler;
+  }
+
+  @Override
+  public String name() {
+    return "Orc soldier";
+  }
 }
