@@ -90,7 +90,6 @@
         <module>bytecode</module>
         <module>caching</module>
         <module>callback</module>
-        <module>chain-of-responsibility</module>
         <module>circuit-breaker</module>
         <module>clean-architecture</module>
         <module>client-session</module>
@@ -140,7 +139,6 @@
         <module>hexagonal-architecture</module>
         <module>identity-map</module>
         <module>intercepting-filter</module>
-        <module>interpreter</module>
         <module>layered-architecture</module>
         <module>lazy-loading</module>
         <module>leader-election</module>

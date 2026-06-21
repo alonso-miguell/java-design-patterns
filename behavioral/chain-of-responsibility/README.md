@@ -37,7 +37,7 @@ Wikipedia says
 
 Flowchart
 
-![Chain of Responsibility flowchart](./etc/chain-of-responsibility-flowchart.png)
+![Chain of Responsibility flowchart](etc/chain-of-responsibility-flowchart.png)
 
 ## Programmatic Example of Chain of Responsibility Pattern
 

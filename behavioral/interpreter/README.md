@@ -34,7 +34,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Interpreter sequence diagram](./etc/interpreter-sequence-diagram.png)
+![Interpreter sequence diagram](etc/interpreter-sequence-diagram.png)
 
 ## Programmatic Example of Interpreter Pattern in Java
 
