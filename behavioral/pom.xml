@@ -18,6 +18,9 @@
         <module>visitor</module>
         <module>interpreter</module>
         <module>chain-of-responsibility</module>
+        <module>mediator</module>
+        <module>mediator</module>
+        <module>memento</module>
     </modules>
 
 </project>

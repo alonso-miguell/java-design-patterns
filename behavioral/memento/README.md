@@ -18,6 +18,9 @@ tag:
 * Snapshot
 * Token
 
+# GOF Design pattern
+### TLDR;
+
 ## Intent of Memento Design Pattern
 
 The Memento design pattern in Java allows developers to capture and restore an object's internal state without violating encapsulation.
@@ -38,7 +41,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Memento sequence diagram](./etc/memento-sequence-diagram.png)
+![Memento sequence diagram](etc/memento-sequence-diagram.png)
 
 ## Programmatic Example of Memento Pattern in Java
 

@@ -147,8 +147,6 @@
         <module>map-reduce</module>
         <module>marker-interface</module>
         <module>master-worker</module>
-        <module>mediator</module>
-        <module>memento</module>
         <module>metadata-mapping</module>
         <module>microservices-aggregrator</module>
         <module>microservices-api-gateway</module>

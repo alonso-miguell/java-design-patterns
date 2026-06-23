@@ -15,6 +15,10 @@ tag:
 
 * Controller
 
+# GOF Design pattern
+### TLDR;
+
+
 ## Intent of Mediator Design Pattern
 
 The Mediator design pattern is intended to reduce the complexity of communication between multiple objects or classes in a system. It achieves this by providing a centralized mediator class that handles the interactions between different classes, thus reducing their direct dependencies on each other.
@@ -35,7 +39,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Mediator sequence diagram](./etc/mediator-sequence-diagram.png)
+![Mediator sequence diagram](etc/mediator-sequence-diagram.png)
 
 ## Programmatic Example of Mediator Pattern in Java
 
