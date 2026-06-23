@@ -13,6 +13,12 @@ tag:
   - Polymorphism
   - Runtime
 ---
+# GOF Design pattern
+### TLDR;
+The intent is to define a grammar for a language, then interpret sentences in that language using a class per grammar rule.
+
+> We shouldn't really bother with this one. It's rarely used in business code and real-world apps. It's the most academically and least practically relevant GoF pattern. The GoF book itself acknowledges it's only appropriate when the grammar is simple and performance isn't critical — two conditions that rarely hold in real business software.
+
 
 ## Intent of Interpreter Design Pattern
 
