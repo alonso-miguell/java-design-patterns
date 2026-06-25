@@ -25,7 +25,7 @@
 package com.iluwatar.mediator;
 
 /** Rogue party member. */
-public class Rogue extends PartyMemberBase {
+public class Rogue extends PartyMemberAbstraction {
 
   @Override
   public String toString() {

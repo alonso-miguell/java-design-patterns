@@ -57,7 +57,7 @@ class PartyMemberTest {
 
   @BeforeEach
   void setUp() {
-    appender = new InMemoryAppender(PartyMemberBase.class);
+    appender = new InMemoryAppender(PartyMemberAbstraction.class);
   }
 
   @AfterEach
@@ -68,12 +68,12 @@ class PartyMemberTest {
   /** Verify if a party action triggers the correct output to the std-Out */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  void testPartyAction(Supplier<PartyMember> memberSupplier) {
+  void testGetConsequence(Supplier<PartyMember> memberSupplier) {
     final var member = memberSupplier.get();
 
     for (final var action : Action.values()) {
-      member.partyAction(action);
-      assertEquals(member + " " + action.getDescription(), appender.getLastMessage());
+      member.getConsequence(action);
+      assertEquals(member + " " + action.getConsequence(), appender.getLastMessage());
     }
 
     assertEquals(Action.values().length, appender.getLogSize());
@@ -101,7 +101,7 @@ class PartyMemberTest {
     assertEquals(Action.values().length + 1, appender.getLogSize());
   }
 
-  /** Verify if {@link PartyMemberBase#toString()} generate the expected output */
+  /** Verify if {@link PartyMemberAbstraction#toString()} generate the expected output */
   @ParameterizedTest
   @MethodSource("dataProvider")
   void testToString(Supplier<PartyMember> memberSupplier) {

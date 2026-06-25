@@ -17,7 +17,16 @@ tag:
 
 # GOF Design pattern
 ### TLDR;
+Basically this one creates a Mediator interface which will have references to all other objects that needs to communicate and can have one or more  ``notify()`` methods to tell the mediator when to update.  The objects won't have any communication between them, all communication would be handled by the mediator.
 
+This pattern:
+
+- Can convert mediator into a god object over time
+- It's similar to facade in the approach of controlling objects, but facade doesn't define any new interfaces or change the objects behaviors, it just groups them, objects aren't aware of the facade. However mediator ``NEEDS`` to declare a new interface and forces objects to hold a mediator reference.
+
+![Mediator rea world](etc/img.png)
+
+Think of it like a control tower which handles air traffic.
 
 ## Intent of Mediator Design Pattern
 
@@ -161,26 +170,26 @@ public static void main(String[] args) {
 Here's the console output from running the example.
 
 ```
-14:05:15.081 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hobbit joins the party
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Wizard joins the party
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Rogue joins the party
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hunter joins the party
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hobbit spotted enemies
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Wizard runs for cover
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Rogue runs for cover
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hunter runs for cover
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Wizard tells a tale
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hobbit comes to listen
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Rogue comes to listen
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hunter comes to listen
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Rogue found gold
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hobbit takes his share of the gold
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Wizard takes his share of the gold
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hunter takes his share of the gold
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hunter hunted a rabbit
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Hobbit arrives for dinner
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Wizard arrives for dinner
-14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberBase -- Rogue arrives for dinner
+14:05:15.081 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hobbit joins the party
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Wizard joins the party
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Rogue joins the party
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hunter joins the party
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hobbit spotted enemies
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Wizard runs for cover
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Rogue runs for cover
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hunter runs for cover
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Wizard tells a tale
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hobbit comes to listen
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Rogue comes to listen
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hunter comes to listen
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Rogue found gold
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hobbit takes his share of the gold
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Wizard takes his share of the gold
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hunter takes his share of the gold
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hunter hunted a rabbit
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Hobbit arrives for dinner
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Wizard arrives for dinner
+14:05:15.083 [main] INFO com.iluwatar.mediator.PartyMemberAbstraction -- Rogue arrives for dinner
 ```
 
 ## When to Use the Mediator Pattern in Java

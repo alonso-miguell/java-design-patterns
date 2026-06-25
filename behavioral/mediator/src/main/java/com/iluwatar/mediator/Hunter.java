@@ -25,7 +25,7 @@
 package com.iluwatar.mediator;
 
 /** Hunter party member. */
-public class Hunter extends PartyMemberBase {
+public class Hunter extends PartyMemberAbstraction {
 
   @Override
   public String toString() {

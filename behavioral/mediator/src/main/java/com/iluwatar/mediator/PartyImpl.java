@@ -38,9 +38,11 @@ public class PartyImpl implements Party {
 
   @Override
   public void act(PartyMember actor, Action action) {
-    for (var member : members) {
+    // When a party member acts, the others in the party receive a consequence
+    // This is the mediator in action, notifying the rest of objects to be updated
+    for (PartyMember member : members) {
       if (!member.equals(actor)) {
-        member.partyAction(action);
+        member.getConsequence(action);
       }
     }
   }

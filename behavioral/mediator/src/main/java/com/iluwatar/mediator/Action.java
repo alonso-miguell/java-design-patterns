@@ -35,11 +35,11 @@ public enum Action {
   NONE("", "");
 
   private final String title;
-  @Getter private final String description;
+  @Getter private final String consequence;
 
-  Action(String title, String description) {
+  Action(String title, String consequence) {
     this.title = title;
-    this.description = description;
+    this.consequence = consequence;
   }
 
   public String toString() {

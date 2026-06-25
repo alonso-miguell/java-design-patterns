@@ -51,7 +51,7 @@ class PartyImplTest {
 
     party.act(partyMember1, Action.GOLD);
     verifyNoMoreInteractions(partyMember1);
-    verify(partyMember2).partyAction(Action.GOLD);
+    verify(partyMember2).getConsequence(Action.GOLD);
 
     verifyNoMoreInteractions(partyMember1, partyMember2);
   }

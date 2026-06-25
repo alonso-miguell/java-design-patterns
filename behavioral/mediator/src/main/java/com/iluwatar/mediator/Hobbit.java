@@ -25,7 +25,7 @@
 package com.iluwatar.mediator;
 
 /** Hobbit party member. */
-public class Hobbit extends PartyMemberBase {
+public class Hobbit extends PartyMemberAbstraction {
 
   @Override
   public String toString() {

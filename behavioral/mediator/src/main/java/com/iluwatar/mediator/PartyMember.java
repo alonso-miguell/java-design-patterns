@@ -29,7 +29,7 @@ public interface PartyMember {
 
   void joinedParty(Party party);
 
-  void partyAction(Action action);
+  void getConsequence(Action action);
 
   void act(Action action);
 }

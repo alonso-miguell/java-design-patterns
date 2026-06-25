@@ -25,7 +25,7 @@
 package com.iluwatar.mediator;
 
 /** Wizard party member. */
-public class Wizard extends PartyMemberBase {
+public class Wizard extends PartyMemberAbstraction {
 
   @Override
   public String toString() {

@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /** Abstract base class for party members. */
 @Slf4j
-public abstract class PartyMemberBase implements PartyMember {
+public abstract class PartyMemberAbstraction implements PartyMember {
 
   protected Party party;
 
@@ -39,8 +39,8 @@ public abstract class PartyMemberBase implements PartyMember {
   }
 
   @Override
-  public void partyAction(Action action) {
-    LOGGER.info("{} {}", this, action.getDescription());
+  public void getConsequence(Action action) {
+    LOGGER.info("{} {}", this, action.getConsequence());
   }
 
   @Override
