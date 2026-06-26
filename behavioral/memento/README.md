@@ -20,6 +20,17 @@ tag:
 
 # GOF Design pattern
 ### TLDR;
+Memento is a pattern about preserving an object's state which is aka an ``snapshot``.  That it could be later restored in an undo/rollback operation. The originator ``(origin)`` class will decide when to save or restore the snapshot. We can also have a ``caretaker`` (think of it like a photographer managing photos) which can handle multiple mementos or keep a history, which will manage it. The caretaker can't have internal access to a memento, only the originator will do it. 
+When creating a memento we can use:
+
+* an inner class to define a memento mirroring the originator class
+* an interface to implement the memento, we use this when we need to cover multiple types of mementos
+
+Serialization in java is a mechanism similar to memento where we pick a format about how to keep an object, it could be bytes, json or a file.
+> A simple analogy: Memento is the blueprint for a safe (save state, protect it, restore it). Serialization is the material you build it with (wood, steel, plastic). You can build the same safe with different materials, and you can use steel for things that aren't safes at all.
+
+![Memento](etc/img.png)
+
 
 ## Intent of Memento Design Pattern
 

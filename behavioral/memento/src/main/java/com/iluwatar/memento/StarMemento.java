@@ -24,5 +24,8 @@
  */
 package com.iluwatar.memento;
 
-/** External interface to memento. */
+/** External interface to memento.
+ * Use an empty interface to enforce the contract but keep it free
+ * for every memento implement as needed
+ * */
 public interface StarMemento {}

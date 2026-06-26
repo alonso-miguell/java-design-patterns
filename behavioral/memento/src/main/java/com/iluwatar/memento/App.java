@@ -69,5 +69,23 @@ public class App {
       star.setMemento(states.pop());
       LOGGER.info(star.toString());
     }
+
+    Star secondStar = new Star(StarType.SUN, 10000000, 500000);
+    Universe universe=new Universe(secondStar);
+
+    universe.reverseTime();
+    universe.passTime();
+    universe.passTime();
+    universe.reverseTime();
+    universe.reverseTime();
+    universe.redoTime();
+    universe.redoTime();
+    universe.reverseTime();
+    universe.redoTime();
+//    universe.newTimeline();
+    universe.reverseTime();
+
+
+
   }
 }

@@ -59,15 +59,11 @@ public class Star {
   }
 
   StarMemento getMemento() {
-    var state = new StarMementoInternal();
-    state.setAgeYears(ageYears);
-    state.setMassTons(massTons);
-    state.setType(type);
-    return state;
+    return new StarMementoImpl(type, ageYears, massTons);
   }
 
   void setMemento(StarMemento memento) {
-    var state = (StarMementoInternal) memento;
+    StarMementoImpl state = (StarMementoImpl) memento;
     this.type = state.getType();
     this.ageYears = state.getAgeYears();
     this.massTons = state.getMassTons();
@@ -80,11 +76,15 @@ public class Star {
 
   /** StarMemento implementation. */
   @Getter
-  @Setter
-  private static class StarMementoInternal implements StarMemento {
-
+  private static class StarMementoImpl implements StarMemento {
     private StarType type;
     private int ageYears;
     private int massTons;
+
+    StarMementoImpl (StarType type, int ageYears, int massTons){
+      this.type=type;
+      this.ageYears=ageYears;
+      this.massTons=massTons;
+    }
   }
 }
