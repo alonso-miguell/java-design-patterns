@@ -36,7 +36,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Template Method Pattern Sequence Diagram](./etc/template-method-sequence-diagram.png)
+![Template Method Pattern Sequence Diagram](etc/template-method-sequence-diagram.png)
 
 ## Programmatic Example of Template Method Pattern in Java
 

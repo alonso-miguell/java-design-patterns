@@ -170,7 +170,6 @@
         <module>null-object</module>
         <module>object-mother</module>
         <module>object-pool</module>
-        <module>observer</module>
         <module>optimistic-offline-lock</module>
         <module>page-controller</module>
         <module>page-object</module>
@@ -207,13 +206,11 @@
         <module>spatial-partition</module>
         <module>special-case</module>
         <module>specification</module>
-        <module>state</module>
         <module>step-builder</module>
         <module>strangler</module>
         <module>subclass-sandbox</module>
         <module>table-inheritance</module>
         <module>table-module</module>
-        <module>template-method</module>
         <module>templateview</module>
         <module>thread-pool-executor</module>
         <module>throttling</module>

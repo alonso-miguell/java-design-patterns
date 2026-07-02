@@ -35,7 +35,7 @@ Wikipedia says
 
 Sequence diagram
 
-![Observer sequence diagram](./etc/observer-sequence-diagram.png)
+![Observer sequence diagram](etc/observer-sequence-diagram.png)
 
 ## Programmatic Example of Observer Pattern in Java
 

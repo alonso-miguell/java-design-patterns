@@ -40,7 +40,7 @@ Wikipedia says
 
 Flowchart
 
-![State flowchart](./etc/state-flowchart.png)
+![State flowchart](etc/state-flowchart.png)
 
 ## Programmatic Example of State Pattern in Java
 

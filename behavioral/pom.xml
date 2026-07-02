@@ -21,6 +21,9 @@
         <module>mediator</module>
         <module>mediator</module>
         <module>memento</module>
+        <module>template-method</module>
+        <module>observer</module>
+        <module>state</module>
     </modules>
 
 </project>
