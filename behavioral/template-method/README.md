@@ -15,7 +15,9 @@ tag:
   - Polymorphism
   - Reusability
 ---
-
+# GOF Design pattern
+### TLDR;
+.
 ## Intent of Template method Design Pattern
 
 Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.

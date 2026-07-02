@@ -10,8 +10,11 @@ tag:
   - State tracking
 ---
 
-## Also known as
+# GOF Design pattern
+### TLDR;
+.
 
+## Also known as
 * Objects for States
 
 ## Intent of State Design Pattern

@@ -10,6 +10,9 @@ tag:
   - Gang of Four
   - Publish/subscribe
 ---
+# GOF Design pattern
+### TLDR;
+.
 
 ## Also known as
 
