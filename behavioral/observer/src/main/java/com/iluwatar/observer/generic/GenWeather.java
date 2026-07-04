@@ -39,7 +39,7 @@ public class GenWeather extends Observable<GenWeather, Race, WeatherType> {
 
   /** Makes time pass for weather. */
   public void timePasses() {
-    var enumValues = WeatherType.values();
+    WeatherType[] enumValues = WeatherType.values();
     currentWeather = enumValues[(currentWeather.ordinal() + 1) % enumValues.length];
     LOGGER.info("The weather changed to {}.", currentWeather);
     notifyObservers(currentWeather);

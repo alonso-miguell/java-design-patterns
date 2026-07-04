@@ -50,14 +50,14 @@ public class App {
    */
   public static void main(String[] args) {
 
-    var weather = new Weather();
-    weather.addObserver(new Orcs());
-    weather.addObserver(new Hobbits());
+    Weather publisher = new Weather();
+    publisher.addObserver(new Orcs());
+    publisher.addObserver(new Hobbits());
 
-    weather.timePasses();
-    weather.timePasses();
-    weather.timePasses();
-    weather.timePasses();
+    publisher.timePasses();
+    publisher.timePasses();
+    publisher.timePasses();
+    publisher.timePasses();
 
     // Generic observer inspired by Java Generics and Collections by Naftalin & Wadler
     LOGGER.info("--Running generic version--");

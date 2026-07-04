@@ -12,8 +12,13 @@ tag:
 ---
 # GOF Design pattern
 ### TLDR;
-.
+This pattern it's based on a subject (publisher) and one or more observers (subscribers), where the publisher keeps references (usually in a list or a map) to its subscribers and it notifies them when its state changes somehow.  So the publisher should have an interface with some minimal methods like attach/detach, notify subscribers.  While the subscribers should have a minimal update method. Also:
 
+* A subscriber can have multiple subscriptions to many publishers.
+* We can define events, so subscribers only react to certain events.
+* There's also pull/push model subscriptions.
+  * ``Pull``: The publisher sends the most minimal info to the subscriber. This may be inneficient because subscribers would need to make an extra call to know what changed.
+  * ``Push``: The publisher sends detailed info about what changed, this is more efficient but it tightly couples the subscribers to the publishers making them less reusable.
 ## Also known as
 
 * Dependents
