@@ -12,7 +12,18 @@ tag:
 
 # GOF Design pattern
 ### TLDR;
-.
+This pattern is basically based on a state-finite machine. It's used to avoid long, monolithic logic in a single place under long conditionals (switch/if) and we separate all this logic into different states to optimize it. While the object calling theses states is known as the context.  This pattern:
+
+* Doesn't define who changes the state, it could be another state or the context itself
+* Looks similar to strategy pattern but:
+  * States can interact between them and be aware of the others, in strategy each class is isolated from the others
+  * In strategy the client defines which strategy to use in state it can be any state or the client.
+  * States holds a back reference to their context, strategies don't
+* Each state can be used as a flyweight (if they don't store instance data, like a singleton)
+
+<p align="center">
+<img title="State real world example" src="etc/img.png" alt="description" width="350">
+</p>
 
 ## Also known as
 * Objects for States
