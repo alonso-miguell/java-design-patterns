@@ -19,6 +19,10 @@ This pattern it's based on a subject (publisher) and one or more observers (subs
 * There's also pull/push model subscriptions.
   * ``Pull``: The publisher sends the most minimal info to the subscriber. This may be inneficient because subscribers would need to make an extra call to know what changed.
   * ``Push``: The publisher sends detailed info about what changed, this is more efficient but it tightly couples the subscribers to the publishers making them less reusable.
+> Observer can also use a broker which holds the subscribers and publishes events to them, so the broker becomes a mediator. We can say that we have an Observer implemented with a Mediator mechanism.
+
+>Kafka, Pub/Sub, RabbitMQ uses the above combination but the broker is: Persistent , Distributed, Asynchronous and durable.
+
 ## Also known as
 
 * Dependents
