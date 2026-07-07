@@ -17,7 +17,22 @@ tag:
 ---
 # GOF Design pattern
 ### TLDR;
-.
+We can implement this pattern to avoid repetition of similar logic and break this into small steps that will be used in a method known as template method in an abstract class. This is useful when we have features that behave similar (reading/writing different kinds of files. logging into a social network, etc).
+
+In the template method:
+
+- In theory, it shouldn't be overridden so it must be declared as final but it practice this can depend on the approach.
+- Must use the other methods in the abstract class which can be:
+  - ``Hooks``: Optional methods with default logic (can have empty body) which can be optionally overridden
+  - ``Abstract steps``: Methods without implementation, MUST BE overridden by subclasses
+  
+>While strategy focuses on composition for choosing an implementation, template focuses on inheritance. In the modern java world, composition is preffered.
+
+<p align="center">
+<img title="tem,plate method analogy" src="etc/img.png" alt="description" width="350">
+</p>
+
+
 ## Intent of Template method Design Pattern
 
 Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
