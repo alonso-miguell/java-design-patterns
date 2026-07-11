@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>com.iluwatar</groupId>
-        <artifactId>java-design-patterns</artifactId>
+        <artifactId>gof-patterns</artifactId>
         <version>1.26.0-SNAPSHOT</version>
     </parent>
 

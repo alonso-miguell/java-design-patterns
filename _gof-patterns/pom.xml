@@ -8,21 +8,13 @@
         <version>1.26.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>behavioral</artifactId>
+    <artifactId>gof-patterns</artifactId>
     <packaging>pom</packaging>
 
     <modules>
-        <module>strategy</module>
-        <module>command</module>
-        <module>iterator</module>
-        <module>visitor</module>
-        <module>interpreter</module>
-        <module>chain-of-responsibility</module>
-        <module>mediator</module>
-        <module>memento</module>
-        <module>template-method</module>
-        <module>observer</module>
-        <module>state</module>
+        <module>behavioral</module>
+        <module>creational</module>
+        <module>structural</module>
     </modules>
 
 </project>

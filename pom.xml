@@ -72,10 +72,7 @@
     </properties>
     <modules>
 
-        <module>creational</module>
-        <module>behavioral</module>
-        <module>structural</module>
-
+        <module>_gof-patterns</module>
 
         <module>abstract-document</module>
         <module>active-object</module>

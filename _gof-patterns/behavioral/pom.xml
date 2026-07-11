@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.iluwatar</groupId>
+        <artifactId>gof-patterns</artifactId>
+        <version>1.26.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>behavioral</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>strategy</module>
+        <module>command</module>
+        <module>iterator</module>
+        <module>visitor</module>
+        <module>interpreter</module>
+        <module>chain-of-responsibility</module>
+        <module>mediator</module>
+        <module>memento</module>
+        <module>template-method</module>
+        <module>observer</module>
+        <module>state</module>
+    </modules>
+
+</project>
